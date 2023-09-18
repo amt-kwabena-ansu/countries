@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
+import { CountryPageComponent } from './country-page/country-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AllCountriesComponent
+    AllCountriesComponent,
+    CountryPageComponent
   ],
   imports: [
     BrowserModule,

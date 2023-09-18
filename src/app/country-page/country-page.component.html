@@ -1,0 +1,114 @@
+<div className=' w-full bg-white bg-opacity-80  dark:bg-opacity-0'>
+    <div className='min-h-screen flex flex-col flex-shrink-0 font-Nunito py-10 laptop:pt-0 laptop:mx-auto laptop:px-16 pc: gap-10 pc:min-w-[1020px] max-w-[1440px]'>
+          <div className='flex align-middle gap-2 ml-5 mb-5 mt-5 rounded-md shadow-around dark:shadow-around-dark laptop:shadow-none laptop:ml-0 laptop:mt-10 pc:mt-20 h-10 w-28 pl-6 pt-2 dark:bg-blue' to='/'>
+            <div className=''>
+            <!-- <ArrowBackIcon  color='inherit' /> -->
+            </div>
+            Back
+          </div>
+          <div>
+            <div
+              className="grid px-4 laptop:grid-cols-2 laptop:px-0 laptop:gap-20 pc:gap-36"
+            >
+              <div className=" rounded-2xl overflow-clip laptop:max-h-96 laptop:min-w-[450px] pc:h-full">
+                <img
+                  className=" object-cover h-full rounded-2xl"
+                  src=''
+                  alt=''
+                />
+              </div>
+              <div className="laptop:pt-6 pc:pt-[5%]">
+                <div
+                  className="text-xl font-extrabold mt-11 mb-4 laptop:mt-0 laptop:mb-0"
+                >
+                  val.name
+                </div>
+                <div
+                  className="flex flex-col gap-8 text-base laptop:flex-row laptop:gap-25 laptop:pt-5 pc:gap-36 pc:pt-10"
+                >
+                  <div className="font-bold">
+                    <div>
+                      Native name:
+                      <span className=" font-light" >
+                        val.nativeName
+                      </span>
+                    </div>
+                    <div>
+                      Population:
+                      <span className="font-light">
+                        val.population.toLocaleString()
+                      </span>
+                    </div>
+                    <div className="">
+                      Region:
+                      <span className=" font-light">
+                        val.region
+                      </span>
+                    </div>
+                    <div className="" >
+                      Sub region:
+                      <span className=" font-light">
+                        val.subregion
+                      </span>
+                    </div>
+                    <div>
+                      Capital:
+                      <span className=" font-light">
+                        val.capital
+                      </span>
+                    </div>
+                  </div>
+                  <div className="font-bold" >
+                    <div>
+                      Top level domain:
+                      <span className=" font-light">
+                        val.topLevelDomain
+                      </span>
+                    </div>
+                    <div >
+                      Currencies:
+                      val.currencies &&
+                        val.currencies.map((currency, ind0) => (
+                          <span
+                            className=" font-light"
+                          >
+                            currency.name
+                          </span>
+                        ))
+                    </div>
+                    <div>
+                      Languages:
+                      <span className=" font-light" >
+                        val.languages.map((lang) => lang.name).join(", ")
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="flex gap-4 pt-16 pr-16 flex-col laptop:pt-9 laptop:flex-row pc:pt-[8%]"
+                >
+                  <div
+                    className=" laptop:min-w-[127px]"
+                  >
+                    Border countries:
+                  </div>
+                  <div
+                    className="flex flex-wrap gap-3"
+                  >
+                    boolborder &&
+                      border.map((Country, ind3) => (
+                        <div >
+                          <button
+                            className=" bg-white dark:bg-blue w-fit h-fit min-h-7 px-7 rounded-sm shadow-around dark:shadow-around-dark"
+                          >
+                            Country
+                          </button>
+                        </div>
+                      ))
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
