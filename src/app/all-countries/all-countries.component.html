@@ -1,0 +1,33 @@
+<div
+  className=" flex flex-col flex-shrink-0 font-Nunito max-w-[1440px] gap-10 laptop:mx-auto laptop:px-16 pc:min-w-[1020px] pt-12 pb-10]"
+>
+  <div
+    class="grid mx-12 grid-cols-1 gap-14 laptop:mx-0 laptop:grid-cols-4 laptop:gap-8 pc:gap-14"
+  >
+    <div>
+      <div
+        class="bg-white dark:bg-blue self-center h-96 laptop:h-80 pc:h-96 shadow-lg dark:shadow-sm rounded-lg"
+      >
+        <div class="w-[100%] h-[50%] m-0 rounded-t-lg overflow-hidden">
+          <img class="h-full w-full aspect-square object-cover" alt="" />
+        </div>
+        <div class="px-5 laptop:px-3 pc:px-5">
+          <div class="laptop:text-lg pc:text-xl font-extrabold pt-4 pb-3">
+            val.name
+          </div>
+          <div class="font-bold">
+            Population:
+            <span class="font-thin">val.population.toLocaleString()</span>
+          </div>
+          <div class="font-bold">
+            Region: <span class="font-thin">val.region</span>
+          </div>
+          <div class="font-bold">
+            Capital: <span class="font-thin">val.capital</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{countries|async|json}}
