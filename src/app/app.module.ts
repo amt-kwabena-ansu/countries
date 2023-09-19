@@ -16,12 +16,8 @@ import { CountryPageComponent } from './country-page/country-page.component';
   ],
   imports: [
     BrowserModule,
-<<<<<<< Updated upstream
-    AppRoutingModule
-=======
     AppRoutingModule,
     HttpClientModule
->>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
