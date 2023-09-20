@@ -8,6 +8,11 @@ const routes: Routes = [
     path: '',
     component: AllCountriesComponent,
     title: 'Rest countries',
+  },
+  {
+    path: 'country/:countryName',
+    component: CountryPageComponent,
+    title: 'Rest countries',
   }
 ];
 
