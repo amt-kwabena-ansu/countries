@@ -15,13 +15,12 @@ export class CountryPageComponent implements OnInit {
   );
   country: country[] | null = null;
   constructor() {
-    console.log(this.route.snapshot.params['countryName']);
     this.countryName = this.route.snapshot.params['countryName'];
   }
 
   ngOnInit(): void {
     this.country = this.countries.filter(
-      (country) => country.name.toLowerCase() === this.countryName
+      (country) => country.name.toLowerCase() === this.countryName.toLowerCase()
     );
   }
 }
