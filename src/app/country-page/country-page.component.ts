@@ -20,7 +20,7 @@ export class CountryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.country = this.countries.filter(
-      (country) => country.name.toLowerCase() === this.countryName.toLowerCase()
+      (country) => country.alpha3Code.toLowerCase() === this.countryName.toLowerCase()
     );
   }
 }

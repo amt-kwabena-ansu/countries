@@ -99,6 +99,7 @@
                 <button
                   class="bg-white dark:bg-blue w-fit h-fit min-h-7 px-7 rounded-sm shadow-around dark:shadow-around-dark"
                   *ngFor="let country of nation.borders"
+                  [routerLink]="'/country/'+country"
                   >
                   {{country}}
                 </button>
