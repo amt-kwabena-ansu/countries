@@ -15,8 +15,10 @@ export class AppComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.setItem('theme', 'dark');
       this.setTheme('dark');
     } else {
+      localStorage.setItem('theme', 'light');
       this.setTheme('light');
     }
   }
