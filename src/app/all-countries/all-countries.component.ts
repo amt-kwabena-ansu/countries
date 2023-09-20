@@ -6,13 +6,23 @@ import { country } from '../api/apiTypes';
 @Component({
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
-  styleUrls: ['./all-countries.component.css']
+  styleUrls: ['./all-countries.component.css'],
 })
 export class AllCountriesComponent {
-  countries= new Observable<country[]>();
-  constructor(private readonly allCountries:ApiService){}
 
-  ngOnInit():void{
-    this.countries= this.allCountries.getAllCountries()
+  countries = new Observable<country[]>();
+
+  constructor(private readonly allCountries: ApiService) {}
+
+  ngOnInit(): void {
+    this.countries = this.allCountries.getAllCountries();
+    this.countries.subscribe(
+      (output) => {
+        localStorage.setItem('countries', JSON.stringify(output));
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
