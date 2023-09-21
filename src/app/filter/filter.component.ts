@@ -6,11 +6,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent {
-  @Output() search = new EventEmitter<string>();
+  @Output() searcher = new EventEmitter<string>();
   searchValue:string=''
   constructor() {}
-  find(event:Event){
-    console.log(event)
-    this.search.emit('a')
+  find(){
+    this.searcher.emit(this.searchValue)
   }
 }

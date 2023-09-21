@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { Observable } from 'rxjs';
 import { country } from '../api/apiTypes';
@@ -7,21 +7,25 @@ import { country } from '../api/apiTypes';
   selector: 'app-all-countries',
   templateUrl: './all-countries.component.html',
   styleUrls: ['./all-countries.component.css'],
-  template:`
-  <app-child (search)="filter($event)"></app-child>
-`,
+  
 })
 export class AllCountriesComponent {
   output!: country[];
   countries = new Observable<country[]>();
   renderedCountries!: country[];
-
+  searchValue=''
   constructor(private readonly allCountries: ApiService) {}
 
-  filter(search:Event) {
+  searchHandler(data:string){
+    this.searchValue=data
+    console.log('data')
+    this.filter(data)
+  }
+
+  private filter(search:string) {
     console.log(search)
-    this.renderedCountries = this.renderedCountries.filter((coutry) =>
-      coutry.name.toLowerCase().includes('b')
+    this.renderedCountries = this.output.filter((coutry) =>
+      coutry.name.toLowerCase().includes(search.toLowerCase())
     );
   }
 
