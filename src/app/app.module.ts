@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { CountryPageComponent } from './country-page/country-page.component';
 import { FilterComponent } from './filter/filter.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,8 @@ import { FilterComponent } from './filter/filter.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
