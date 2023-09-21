@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { CountryPageComponent } from './country-page/country-page.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AllCountriesComponent,
-    CountryPageComponent
+    CountryPageComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
