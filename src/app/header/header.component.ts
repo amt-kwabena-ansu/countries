@@ -15,12 +15,17 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      localStorage.setItem('theme', 'light');
-      this.setTheme('light');
-    } else {
-      localStorage.setItem('theme', 'light');
-      this.setTheme('light');
+    if(this.theme){
+      this.setTheme(this.theme)
+    }
+    else{
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        localStorage.setItem('theme', 'dark');
+        this.setTheme('dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+        this.setTheme('light');
+      }
     }
     console.log(this.theme);
   }
