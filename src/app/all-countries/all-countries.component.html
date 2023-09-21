@@ -5,7 +5,7 @@
     class="grid mx-12 grid-cols-1 gap-14 laptop:mx-0 laptop:grid-cols-4 laptop:gap-8 pc:gap-14"
   >
     <div *ngFor="let val of countries | async">
-      <a [routerLink]="['/country/'+val.name]" routerLinkActive="router-link-active">
+      <a [routerLink]="['/country/'+val.alpha3Code]" >
         <div
           class="bg-white dark:bg-blue self-center h-96 laptop:h-80 pc:h-96 shadow-lg dark:shadow-sm rounded-lg"
         >
