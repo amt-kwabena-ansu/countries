@@ -7,9 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FilterComponent {
   @Output() searcher = new EventEmitter<string>();
+  @Output() filterByRegion = new EventEmitter<string>();
   searchValue:string=''
+  filterValue:string=''
   constructor() {}
-  find(){
+  search(){
     this.searcher.emit(this.searchValue)
+  }
+  filter(){
+    this.filterByRegion.emit(this.filterValue)
+    console.log(this.filterValue)
   }
 }

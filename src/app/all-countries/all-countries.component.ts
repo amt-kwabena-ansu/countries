@@ -14,19 +14,23 @@ export class AllCountriesComponent {
   countries = new Observable<country[]>();
   renderedCountries!: country[];
   searchValue=''
+  filterValue=''
   constructor(private readonly allCountries: ApiService) {}
 
   searchHandler(data:string){
     this.searchValue=data
-    console.log('data')
-    this.filter(data)
+    this.filter()
+  }
+  
+  filterByRegionHandler(data:string){
+    this.filterValue=data
+    this.filter()
   }
 
-  private filter(search:string) {
-    console.log(search)
-    this.renderedCountries = this.output.filter((coutry) =>
-      coutry.name.toLowerCase().includes(search.toLowerCase())
-    );
+  private filter() {
+    this.renderedCountries = this.output.filter((country) =>
+      country.name.toLowerCase().includes(this.searchValue.toLowerCase())
+    ).filter((country)=>country.region.toLowerCase().includes(this.filterValue.toLowerCase()));
   }
 
   ngOnInit(): void {
