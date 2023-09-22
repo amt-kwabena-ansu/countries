@@ -8,19 +8,23 @@ import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { CountryPageComponent } from './country-page/country-page.component';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AllCountriesComponent,
     CountryPageComponent,
-    FilterComponent
+    FilterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
