@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { country } from '../api/apiTypes';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class CountryPageComponent implements OnInit {
   countries: country[] = JSON.parse(
     localStorage.getItem('countries') || '[{}]'
   );
-  country: country[] | null = null;
+  country!: country[];
   constructor() {
     this.countryName = this.route.snapshot.params['countryName'];
   }
