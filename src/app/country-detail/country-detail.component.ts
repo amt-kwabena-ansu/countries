@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Currency, Language, country } from '../api/apiTypes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-detail',
@@ -9,12 +10,15 @@ import { Currency, Language, country } from '../api/apiTypes';
 export class CountryDetailComponent {
   @Input() country!: country[];
 
-  constructor() {}
+  constructor(private router:Router) {}
 
-  language(languages: Language[]) {
+  language(languages: Language[]):string {
     return languages.map((lang) => lang.name).join(', ');
   }
-  currency(currencies: Currency[]) {
+  currency(currencies: Currency[]):string {
     return currencies.map((cur) => cur.name).join(', ');
+  }
+  navigateTo(code:string){
+    this.router.navigateByUrl(`/country/${code}`).then(()=>location.reload())
   }
 }

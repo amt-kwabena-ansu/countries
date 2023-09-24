@@ -1,97 +1,94 @@
 <div>
+  <div
+    *ngFor="let nation of country"
+    class="grid px-4 laptop:grid-cols-2 laptop:px-0 laptop:gap-20 pc:gap-36"
+  >
+    <div
+      class="rounded-2xl overflow-clip laptop:max-h-96 laptop:min-w-[450px] pc:h-full"
+    >
+      <img
+        class="object-cover h-full rounded-2xl"
+        [src]="nation.flag"
+        [alt]="nation.name"
+      />
+    </div>
+    <div class="laptop:pt-6 pc:pt-[5%]">
+      <div class="text-xl font-extrabold mt-11 mb-4 laptop:mt-0 laptop:mb-0">
+        {{ nation.name }}
+      </div>
       <div
-        *ngFor="let nation of country"
-        class="grid px-4 laptop:grid-cols-2 laptop:px-0 laptop:gap-20 pc:gap-36"
+        class="flex flex-col gap-8 text-base laptop:flex-row laptop:gap-25 laptop:pt-5 pc:gap-36 pc:pt-10"
       >
-        <div
-          class="rounded-2xl overflow-clip laptop:max-h-96 laptop:min-w-[450px] pc:h-full"
-        >
-          <img
-            class="object-cover h-full rounded-2xl"
-            [src]="nation.flag"
-            [alt]="nation.name"
-          />
+        <div class="font-bold">
+          <div>
+            Native name:
+            <span class="font-light">
+              {{ nation.nativeName }}
+            </span>
+          </div>
+          <div>
+            Population:
+            <span class="font-light">
+              {{ nation.population.toLocaleString() }}
+            </span>
+          </div>
+          <div class="">
+            Region:
+            <span class="font-light">
+              {{ nation.region }}
+            </span>
+          </div>
+          <div class="">
+            Sub region:
+            <span class="font-light">
+              {{ nation.subregion }}
+            </span>
+          </div>
+          <div>
+            Capital:
+            <span class="font-light">
+              {{ nation.capital }}
+            </span>
+          </div>
         </div>
-        <div class="laptop:pt-6 pc:pt-[5%]">
-          <div
-            class="text-xl font-extrabold mt-11 mb-4 laptop:mt-0 laptop:mb-0"
-          >
-            {{ nation.name }}
+        <div class="font-bold">
+          <div>
+            Top level domain:
+            <span class="font-light">
+              {{ nation.topLevelDomain }}
+            </span>
           </div>
-          <div
-            class="flex flex-col gap-8 text-base laptop:flex-row laptop:gap-25 laptop:pt-5 pc:gap-36 pc:pt-10"
-          >
-            <div class="font-bold">
-              <div>
-                Native name:
-                <span class="font-light">
-                  {{ nation.nativeName }}
-                </span>
-              </div>
-              <div>
-                Population:
-                <span class="font-light">
-                  {{ nation.population.toLocaleString() }}
-                </span>
-              </div>
-              <div class="">
-                Region:
-                <span class="font-light">
-                  {{ nation.region }}
-                </span>
-              </div>
-              <div class="">
-                Sub region:
-                <span class="font-light">
-                  {{ nation.subregion }}
-                </span>
-              </div>
-              <div>
-                Capital:
-                <span class="font-light">
-                  {{ nation.capital }}
-                </span>
-              </div>
-            </div>
-            <div class="font-bold">
-              <div>
-                Top level domain:
-                <span class="font-light">
-                  {{ nation.topLevelDomain }}
-                </span>
-              </div>
-              <div *ngIf="nation.currencies">
-                Currencies:
-                <span
-                  class="font-light"
-                >
-                  {{ currency(nation.currencies)}}
-                </span>
-              </div>
-              <div>
-                Languages:
-                <span class="font-light">
-                  {{ language(nation.languages) }}
-                </span>
-              </div>
-            </div>
+          <div *ngIf="nation.currencies">
+            Currencies:
+            <span class="font-light">
+              {{ currency(nation.currencies) }}
+            </span>
           </div>
+          <div>
+            Languages:
+            <span class="font-light">
+              {{ language(nation.languages) }}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex gap-4 pt-16 pr-16 flex-col laptop:pt-9 laptop:flex-row pc:pt-[8%]"
+      >
+        <div class="laptop:min-w-[127px]">Border countries:</div>
+        <div class="flex flex-wrap gap-3">
           <div
-            class="flex gap-4 pt-16 pr-16 flex-col laptop:pt-9 laptop:flex-row pc:pt-[8%]"
+            *ngFor="let country of nation.borders"
+            (click)="navigateTo(country)"
           >
-            <div class="laptop:min-w-[127px]">Border countries:</div>
-            <div class="flex flex-wrap gap-3">
-              <div>
-                <button
-                  class="bg-white dark:bg-blue w-fit h-fit min-h-7 px-7 rounded-sm shadow-around dark:shadow-around-dark"
-                  *ngFor="let country of nation.borders"
-                  [routerLink]="'/country/'+country"
-                  >
-                  {{country}}
-                </button>
-              </div>
-            </div>
+            <button
+              class="bg-white dark:bg-blue w-fit h-fit min-h-7 px-7 rounded-sm shadow-around dark:shadow-around-dark"
+            >
+              {{ country }}
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

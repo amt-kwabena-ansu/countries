@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { country } from '../api/apiTypes';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,19 +8,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./country-page.component.css'],
 })
 export class CountryPageComponent implements OnInit {
-  countryName!: string;
-  route: ActivatedRoute = inject(ActivatedRoute);
+  countryCode: string = '';
   countries: country[] = JSON.parse(
     localStorage.getItem('countries') || '[{}]'
   );
   country!: country[];
-  constructor() {
-    this.countryName = this.route.snapshot.params['countryName'];
+
+  constructor(route: ActivatedRoute) {
+    route.paramMap.subscribe((params) => {
+      this.countryCode = params.get('countryCode') || '';
+    });
+    console.log(this.countryCode);
   }
 
   ngOnInit(): void {
     this.country = this.countries.filter(
-      (country) => country.alpha3Code.toLowerCase() === this.countryName.toLowerCase()
+      (country) =>
+        country.alpha3Code.toLowerCase() === this.countryCode.toLowerCase()
     );
+    console.log(this.country);
   }
 }
