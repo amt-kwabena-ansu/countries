@@ -9,7 +9,8 @@ import { CountryPageComponent } from './country-page/country-page.component';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CountryDetailComponent } from './country-detail/country-detail.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     AllCountriesComponent,
     CountryPageComponent,
     FilterComponent,
+    CountryDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ const routes: Routes = [
     title: 'Rest countries',
   },
   {
-    path: 'country/:countryName',
+    path: 'country/:countryCode',
     component: CountryPageComponent,
     title: 'Rest countries',
   }
