@@ -1,0 +1,16 @@
+<div class="w-full bg-white bg-opacity-80 dark:bg-opacity-0">
+  <div
+    class="min-h-screen flex flex-col flex-shrink-0 font-Nunito py-10 laptop:pt-0 laptop:mx-auto laptop:px-16 pc: gap-10 pc:min-w-[1020px] max-w-[1440px]"
+  >
+    <div
+      class="flex align-middle gap-2 ml-5 mb-5 mt-5 rounded-md shadow-around dark:shadow-around-dark laptop:shadow-none laptop:ml-0 laptop:mt-10 pc:mt-20 h-10 w-28 pl-6 pt-2 dark:bg-blue hover:cursor-pointer"
+      routerLink="/"
+    >
+      <div>
+        <mat-icon class=" rotate-180" fontIcon="arrow_right_alt"></mat-icon>
+      </div>
+      Back
+    </div>
+    <app-country-detail [country]="country" ></app-country-detail>
+  </div>
+</div>
